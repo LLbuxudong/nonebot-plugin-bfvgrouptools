@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "nonebot-plugin-bfvgrouptools"
+version = "0.1.0"
+description = "一个战地5的群管理插件,支持查询屏蔽记录,自动入群等"
+authors = ["llbuxudong 3513392931@qq.com"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "nonebot_plugin_bfvgrouptools"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+nonebot2 = ">=2.4.0"
+nonebot-adapter-onebot = "^2.2.0"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -6,7 +6,7 @@
 
 <div align="center">
 
-# nonebot-plugin-template
+# nonebot-plugin-bfvgrouptools
 
 _✨ NoneBot 插件简单描述 ✨_
 
@@ -17,7 +17,7 @@ _✨ NoneBot 插件简单描述 ✨_
 <a href="https://pypi.python.org/pypi/nonebot-plugin-template">
     <img src="https://img.shields.io/pypi/v/nonebot-plugin-template.svg" alt="pypi">
 </a>
-<img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="python">
+<img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="python">
 
 </div>
 
@@ -64,7 +64,7 @@ _✨ NoneBot 插件简单描述 ✨_
 
 ## 📖 介绍
 
-这里是插件的详细介绍部分
+为BFV玩家提供状态查询、封禁记录查询，以及自动处理加群请求等功能的群管理插件
 
 ## 💿 安装
 
@@ -72,7 +72,7 @@ _✨ NoneBot 插件简单描述 ✨_
 <summary>使用 nb-cli 安装</summary>
 在 nonebot2 项目的根目录下打开命令行, 输入以下指令即可安装
 
-    nb plugin install nonebot-plugin-template
+    nb plugin install nonebot-plugin-bfvgrouptools
 
 </details>
 
@@ -83,22 +83,22 @@ _✨ NoneBot 插件简单描述 ✨_
 <details>
 <summary>pip</summary>
 
-    pip install nonebot-plugin-template
+    pip install nonebot-plugin-bfvgrouptools
 </details>
 <details>
 <summary>pdm</summary>
 
-    pdm add nonebot-plugin-template
+    pdm add nonebot-plugin-bfvgrouptools
 </details>
 <details>
 <summary>poetry</summary>
 
-    poetry add nonebot-plugin-template
+    poetry add nonebot-plugin-bfvgrouptools
 </details>
 <details>
 <summary>conda</summary>
 
-    conda install nonebot-plugin-template
+    conda install nonebot-plugin-bfvgrouptools
 </details>
 
 打开 nonebot2 项目根目录下的 `pyproject.toml` 文件, 在 `[tool.nonebot]` 部分追加写入
@@ -113,14 +113,11 @@ _✨ NoneBot 插件简单描述 ✨_
 
 | 配置项 | 必填 | 默认值 | 说明 |
 |:-----:|:----:|:----:|:----:|
-| 配置项1 | 是 | 无 | 配置说明 |
-| 配置项2 | 否 | 无 | 配置说明 |
+| ALLOWED_GROUPS | 是 | 无 | 启用群申请自动通过的群号 |
 
 ## 🎉 使用
 ### 指令表
 | 指令 | 权限 | 需要@ | 范围 | 说明 |
 |:-----:|:----:|:----:|:----:|:----:|
-| 指令1 | 主人 | 否 | 私聊 | 指令说明 |
-| 指令2 | 群员 | 是 | 群聊 | 指令说明 |
-### 效果图
-如果有效果图的话
+| player= | 无 | 否 | 群聊 | 查询玩家bfban和bfvrobot状态 |
+| pb= | 无 | 是 | 群聊 | 查询屏蔽原因 |
