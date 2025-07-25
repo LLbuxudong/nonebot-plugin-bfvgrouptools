@@ -1,6 +1,8 @@
 from email.mime import base
 import json
 from pathlib import Path
+import re
+from venv import logger
 
 from nonebot import require
 
@@ -68,6 +70,7 @@ async def get_personid(name: str):
             if key.lower == name.lower:
                 name = key
         userdata = {name:personid}          #返回
+        logger.info(f"{name}的personaid在缓存中,为{personid}")
         return userdata
     else:                                   #缓存中没有
         userdata = await get_persona_id(name)  
@@ -79,7 +82,7 @@ async def get_personid(name: str):
             userdata = {name:personid}
             local_cache.players[name] = personid
             local_cache.save()
+            logger.info(f"{name}的personaid不在在缓存中,为{personid},已添加至缓存")
             return userdata
         else:
-            return {"error":"player not found"}
-            
+            return {"error":"1"} #player not found

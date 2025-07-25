@@ -30,7 +30,7 @@ async def get_persona_id(username: str) -> Optional[str]:
     try:
         user_data = await fetch_json(url_uid)
     except Exception as e:
-        error_message = {"error":"{e}"} 
+        error_message = {"error":{"2":{e}}} 
         return error_message
     else:
         if user_data and user_data.get("status") == 1 and user_data.get("message") == "successful":
@@ -39,7 +39,8 @@ async def get_persona_id(username: str) -> Optional[str]:
             user_data={"personaId":persona_id,"name":name}
             return user_data 
         else:
-            return "error:player not found"
+            user_data = {"error":"1"}#player not found
+            return user_data
 
 # 获取ban状态
 @cached(ttl=600)
