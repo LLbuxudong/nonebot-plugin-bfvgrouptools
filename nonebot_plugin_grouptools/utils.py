@@ -39,7 +39,7 @@ async def get_persona_id(username: str) -> Optional[str]:
             user_data={"personaId":persona_id,"name":name}
             return user_data 
         else:
-            return None
+            return "error:player not found"
 
 # 获取ban状态
 @cached(ttl=600)
